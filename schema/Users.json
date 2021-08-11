@@ -1,0 +1,24 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["name", "email", "active"],
+    "properties": {
+      "name": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "email": {
+        "bsonType": "string",
+        "description": "must be a string type email and is required"
+      },
+      "active": {
+        "bsonType": "bool",
+        "description": "must be a boolean value denoting the status of the user"
+      },
+      "access_token": {
+        "bsonType": "string",
+        "description": "must be a token as a string value"
+      }
+    }
+  }
+}
