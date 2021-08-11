@@ -1,4 +1,5 @@
 const { getDb } = require('../db');
+const mongodb = require("mongodb");
 
 const getAllUsers = (req, res) => {
     try {
@@ -27,7 +28,7 @@ const deleteUser = (req, res) => {
     try {
         let db = getDb();
         let userId = req.params.id;
-        db.collection('Users').deleteOne({ "_id": userId }, (err, result) => {
+        db.collection('Users').deleteOne({ _id: mongodb.ObjectId(userId) }, (err, result) => {
             res.send("user deleted successfully!");
         });
     } catch (err) {
